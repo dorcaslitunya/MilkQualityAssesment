@@ -1,5 +1,5 @@
 <div>
-    <div id="DivGaugeChartpH" style="text-align: center">ph chart here</div>
+    <div id="DivGaugeChartGas" style="text-align: center">Gas chart here</div>
 </div>
 
 <script>
@@ -7,11 +7,11 @@
         // $(document).ready(function() {
         // console.log("loading chart");
 
-        const chart_canvasA = document.getElementById('DivGaugeChartpH');
+        const chart_canvasA = document.getElementById('DivGaugeChartGas');
 
         let chart_A;
 
-        var post_url = "/dashboard/Overview/Sensor_charts/Sensor2/gaugechart_dummydata.php";
+        var post_url = "/dashboard/Overview/Sensor_charts/Sensor4/gaugechart_dummydata.php";
         let DataQueried;
         let DataQueried_JSON;
         var MostRecentSensVal;
@@ -86,7 +86,7 @@
 
                 let data = google.visualization.arrayToDataTable([
                     ['Label', 'Value'],
-                    ['pH', MostRecentSensVal_1]
+                    ['Gas', MostRecentSensVal_1]
                     // DataQueried_JSON_load_sens1
                 ]);
 

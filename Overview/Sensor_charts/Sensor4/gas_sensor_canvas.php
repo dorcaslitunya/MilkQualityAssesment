@@ -1,7 +1,7 @@
 <div class="row mt-3 mb-3">
 
     <div class="col-sm-12">
-        <p class="light">Ph Sensor </p>
+        <p class="light">Gas Sensor </p>
     </div>
 
     <div class="col-sm-4">
@@ -9,7 +9,7 @@
 
             <div class="card-body">
                 <?php
-                include site . "/dashboard/Overview/Sensor_charts/Sensor2/gauge_chart.php";
+                include site . "/dashboard/Overview/Sensor_charts/Sensor4/gauge_chart.php";
                 ?>
             </div>
 
@@ -21,7 +21,7 @@
 
             <div class="card-body">
                 <?php
-                include site . "/dashboard/Overview/Sensor_charts/Sensor2/line_chart.php";
+                include site . "/dashboard/Overview/Sensor_charts/Sensor4/line_chart.php";
                 ?>
             </div>
 

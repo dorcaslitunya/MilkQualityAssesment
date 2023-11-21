@@ -1,5 +1,5 @@
 <div class="h-100">
-    <canvas id="CanvasJsPHLineChart"> -- </canvas> 
+    <canvas id="CanvasJsTurbidityLineChart"> -- </canvas> 
 </div>
 
 <script>
@@ -7,8 +7,8 @@
         // $(document).ready(function() {
         // console.log("loading chart");
 
-        const chart_canvas = document.getElementById('CanvasJsPHLineChart');
-        var post_url = "/dashboard/Overview/Sensor_charts/Sensor2/gaugechart_dummydata.php";
+        const chart_canvas = document.getElementById('CanvasJsTurbidityLineChart');
+        var post_url = "/dashboard/Overview/Sensor_charts/Sensor3/gaugechart_dummydata.php";
         let post_mq_result;
         var post_mq_result_JSON_payload_sens1=[];
         let post_mq_result_JSON;

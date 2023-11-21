@@ -29,6 +29,7 @@ defined("site") or define("site", $_SERVER['DOCUMENT_ROOT'] . "/");
         include site . "/dashboard/Overview/Cards_overview/cards_overview.php";
         include site . "/dashboard/Overview/Sensor_charts/Sensor1/temp_sensor_canvas.php";
         include site . "/dashboard/Overview/Sensor_charts/Sensor2/pH_sensor_canvas.php";
+        include site . "/dashboard/Overview/Sensor_charts/Sensor3/turbidity_sensor_canvas.php";
         ?>
 
     </div>

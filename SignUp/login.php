@@ -1,5 +1,10 @@
 <?php
 
+// --------- display all errors --------- 
+include_once site . "/dashboard/error_toggle.php";
+// ----------- error display ------------
+
+
 $is_invalid = false;
 
 if($_SERVER["REQUEST_METHOD"] === "POST"){

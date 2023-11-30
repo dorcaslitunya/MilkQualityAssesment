@@ -1,5 +1,10 @@
 <?php
 
+// --------- display all errors --------- 
+include_once site . "/dashboard/error_toggle.php";
+// ----------- error display ------------
+
+
 $host = "localhost";
 $dbname = "login_db";
 $username = "milk";

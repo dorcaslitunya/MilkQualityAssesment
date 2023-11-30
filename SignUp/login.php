@@ -1,26 +1,31 @@
 <?php
-
+defined("site") or define("site", $_SERVER['DOCUMENT_ROOT']. "/");
 // --------- display all errors --------- 
 include_once site . "/dashboard/error_toggle.php";
 // ----------- error display ------------
 
-
 $is_invalid = false;
 
-if($_SERVER["REQUEST_METHOD"] === "POST"){
-
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $mysqli = require __DIR__ . "/database.php";
 
-    $sql = sprintf("SELECT * FROM user WHERE email = '%s'", $mysqli->real_escape_string($_POST["email"]));
+    $email = $mysqli->real_escape_string($_POST["email"]);
+    $sql = sprintf("SELECT * FROM user WHERE email = '%s'", $email);
 
     $result = $mysqli->query($sql);
 
+    if ($result === false) {
+        // Log SQL error
+        $sqlError = "SQL error: " . $mysqli->error;
+        error_log($sqlError, 3, __DIR__ . "/error_log/error.log");
+        die($sqlError);
+    }
+
     $user = $result->fetch_assoc();
 
-    if($user){
-        if(password_verify($_POST["password"],$user["password_hash"])){
+    if ($user) {
+        if (password_verify($_POST["password"], $user["password_hash"])) {
             session_start();
-
             $_SESSION["user_id"] = $user["id"];
             
             header("Location: /dashboard/Overview/overview.php");
@@ -29,6 +34,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     }
 
     $is_invalid = true;
+
+    // Log failed login attempt
+    $loginError = "Failed login attempt for email: $email";
+    error_log($loginError, 3, __DIR__ . "/error_log/error.log");
 }
 
 ?>
@@ -50,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
     <?php endif; ?>
 
     <form method="post">
-    <div>
+        <div>
             <label for="email">Email</label>
             <input type="email" id="email" name="email" value="<?= htmlspecialchars($_POST["email"] ?? "" )?>">
         </div>

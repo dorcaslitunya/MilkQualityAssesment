@@ -9,12 +9,13 @@ defined("site_title") or define("site_title", "MilkTester");
 
 <head>
   <?php
-  include site . "/modules/html.header/header.php";
-  include site . "/modules/html.header/styles.css.php";
-  include site . "/modules/html.header/CDNs.chartJS.php";
-  include site . "/modules/html.header/CDNs.datatable.php";
-  include site . "/modules/html.scripts/CDNs.doc.php";
-  include site . "/modules/html.header/CDNs.google.maps.php";
+  
+  include site . "/dashboard/modules/html.header/header.php";
+  include site . "/dashboard/modules/html.header/styles.css.php";
+  include site . "/dashboard/modules/html.header/CDNs.chartJS.php";
+  include site . "/dashboard/modules/html.header/CDNs.datatable.php";
+  //include site . "/dashboard/modules/html.scripts/CDNs.doc.php";
+  include site . "/dashboard/modules/html.header/CDNs.google.maps.php";
   // include site . "/pages/authentication/SignInUp/SignInUp.css";
   ?>
   <style>
@@ -129,9 +130,10 @@ defined("site_title") or define("site_title", "MilkTester");
         </div>
       </div>
 
-      <script src="/dashboard/pages/authentication/SignInUp/SignInUp.js"></script>
-      <script src="/dashboard/pages/authentication/SignInUp/SignIn.Handler.js"></script>
-      <script src="/dashboard/pages/authentication/SignInUp/SignUp.Handler.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+      <script src="dashboard/SignInUp/SignInUp.js"></script>
+      <script src="/dashboard/SignInUp/SignIn.Handler.js"></script>
+      <script src="/dashboard/SignInUp/SignUp.Handler.js"></script>
 
 
     </div>
@@ -144,13 +146,12 @@ defined("site_title") or define("site_title", "MilkTester");
     ?>
 
     <!--   Core JS Files   -->
-    <script src="assets/js/core/popper.min.js"></script>
-    <script src="assets/js/core/bootstrap.min.js"></script>
-    <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
-    <!-- Kanban scripts -->
-    <script src="assets/js/plugins/dragula/dragula.min.js"></script>
-    <script src="assets/js/plugins/jkanban/jkanban.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/cjs/popper.min.js" integrity="sha512-cccYINs21/woK1lZ16XmqaT6ohTy4BxrsgGrxnU3SEVKQACVUcU6nyPXb4meW0TG9TN9zj7OqaFK3E+ckKtmZw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.5/perfect-scrollbar.min.js" integrity="sha512-X41/A5OSxoi5uqtS6Krhqz8QyyD8E/ZbN7B4IaBSgqPLRbWVuXJXr9UwOujstj71SoVxh5vxgy7kmtd17xrJRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.8.4/smooth-scrollbar.min.js" integrity="sha512-UOuvdHxPTS8D5IoOYOwLGAN05jYYXKhxFOZDe/24o53eOOf9ylws0uPfV+gRj/k1z17C0KtC7Vkt+5H7BLQxOA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <!-- Kanban scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.6.6/dragula.min.js" integrity="sha512-MrA7WH8h42LMq8GWxQGmWjrtalBjrfIzCQ+i2EZA26cZ7OBiBd/Uct5S3NP9IBqKx5b+MMNH1PhzTsk6J9nPQQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jkanban@1.3.1/dist/jkanban.min.js"></script>
     <script>
       var win = navigator.platform.indexOf('Win') > -1;
       if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -163,7 +164,7 @@ defined("site_title") or define("site_title", "MilkTester");
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="assets/js/argon-dashboard.min.js"></script>
+    <!-- <script src="assets/js/argon-dashboard.min.js"></script> -->
 </body>
 
 </html>

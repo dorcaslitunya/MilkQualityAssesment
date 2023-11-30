@@ -72,7 +72,7 @@
                 post_result_JSON_payload = post_result_JSON["load"];
                 console.log(post_result_JSON_payload);
                 for (var i = 0; i < post_result_JSON_payload.length; i++) {
-                    post_result_JSON_payload_timeline.push(post_result_JSON_payload[i].timestamp);
+                    post_result_JSON_payload_timeline.push(post_result_JSON_payload[i].current_timestamp);
                     post_result_JSON_payload_cash.push(post_result_JSON_payload[i].temp);
                     // post_result_JSON_payload_ltrs.push(post_result_JSON_payload[i].ltrs);
                 }

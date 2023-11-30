@@ -11,7 +11,7 @@
 
         let chart_A;
 
-        var post_url = "/dashboard/Overview/Sensor_charts/Sensor1/gaugechart_dummydata.php";
+        var post_url = "/endpoints/chargers/temp_retrieve.php";
         let DataQueried;
         let DataQueried_JSON;
         var MostRecentSensVal;
@@ -105,8 +105,11 @@
                     // Time_GaugeValueAA = fetch_first_notNull(post_mq_result_JSON_payload_timestamp);
                     // TODO check if value has changed 
                     // Now set chart values
-                    data.setValue(0, 1, MostRecentSensVal);
-                    // Now update
+                    MostRecentSensVal_1 = parseFloat(DataQueried_JSON_load[DataQueried_JSON_load.length - 1].temp);
+        // Now set chart values
+        data.setValue(0, 1, MostRecentSensVal_1);
+        // Now update
+                           // Now update
                     // console.log("redrawing gauge A");
                     chart.draw(data, options);
                 }, 5000);
@@ -175,7 +178,7 @@
                 // DataQueried_JSON_load_sens3 = [];
 
                 // Get the last sens_1 value
-                MostRecentSensVal = DataQueried_JSON_load[DataQueried_JSON_load.length - 1].sensor_data.sens_1;
+                MostRecentSensVal = DataQueried_JSON_load[DataQueried_JSON_load.length - 1].temp;
                 // console.log("Last sens_1 value is :", MostRecentSensVal);
             } else {
                 console.log("unknown error");
